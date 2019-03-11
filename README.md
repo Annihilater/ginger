@@ -9,7 +9,7 @@
 | ------------------ | ------ | ------------------------- | ------------------------------------------------------------ |
 | 搜索书籍           | GET    | /book/search?q={key_word} | 无需登录                                                     |
 | 获得书籍详情页     | GET    | /book/\<int:isbn\>/detail | 无需登录                                                     |
-| 客户端注册         | POST   | /client/register          | {<br/>    "account": "nihao@qq.com",     "secret": "88888888",     "type": 100,     "nickname": "nihao" } |
+| 客户端注册         | POST   | /client/register          | {"account": "nihao@qq.com","secret": "88888888","type": 100,"nickname": "nihao" } |
 | 新建礼物           | POST   | /gift/\<int:isbn\>        |                                                              |
 | 获取 Token         | POST   | /token                    |                                                              |
 | 校验 Token 信息    | POST   | /secret                   |                                                              |
