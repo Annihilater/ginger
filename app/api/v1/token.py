@@ -20,6 +20,7 @@ api = RedPrint('token')
 
 @api.route('', methods=['POST'])
 def get_token():
+    # url = http://localhost:5000/v1/token
     form = ClientForm().validate_for_api()
     promise = {
         ClientTypeEnum.USER_EMAIL: User.verify_by_email,
@@ -52,6 +53,7 @@ def generate_auth_token(uid, ac_type, scope=None, expiration=7200):
 
 @api.route('/secret', methods=['POST'])
 def get_token_info():
+    # url = http://localhost:5000/v1/secret
     form = TokenForm().validate_for_api()
     token = form.token.data
     s = Serializer(current_app.config['SECRET_KEY'])

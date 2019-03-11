@@ -15,6 +15,7 @@ api = RedPrint('client')
 
 @api.route('/register', methods=['POST'])
 def create_client():
+    # url = http://localhost:5000/v1/client/register
     form = ClientForm().validate_for_api()
     promise = {
         ClientTypeEnum.USER_EMAIL: __register_by_email,

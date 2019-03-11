@@ -19,6 +19,7 @@ api = RedPrint('gift')
 @api.route('/<int:isbn>', methods=['POST'])
 @auth.login_required
 def create(isbn):
+    # url = http://localhost:5000/v1/gift/<int:isbn>
     uid = g.user.uid
     with db.auto_commit():
         Book.query.filter_by(isbn=isbn).first_or_404()

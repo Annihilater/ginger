@@ -27,15 +27,18 @@ def search():
 
 @api.route('/<int:isbn>/detail', methods=['GET'])
 def detail(isbn):
+    # url = http://localhost:5000/v1/book/<int:isbn>/detail
     book = Book.query.filter_by(isbn=isbn).first_or_404()
     return jsonify(book)
 
 
 @api.route('/', methods=['GET'])
 def get_book():
+    # url = http://localhost:5000/v1/book/
     return 'get book'
 
 
 @api.route('/', methods=['POST'])
 def create_book():
+    # url = http://localhost:5000/v1/book/
     return 'create book'

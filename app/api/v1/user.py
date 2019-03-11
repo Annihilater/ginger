@@ -33,6 +33,7 @@ api = RedPrint('user')
 @api.route('/<int:uid>', methods=['GET'])
 @auth.login_required
 def super_get_user(uid):
+    # url = http://localhost:5000/v1/user/<int:uid>
     user = User.query.filter_by(id=uid).first_or_404()
     return jsonify(user)
 
@@ -40,6 +41,7 @@ def super_get_user(uid):
 @api.route('/<int:uid>', methods=['DELETE'])
 @auth.login_required
 def super_delete_user(uid):
+    # url = http://localhost:5000/v1/user/<int:uid>
     with db.auto_commit():
         user = User.query.filter_by(id=uid).first_or_404()
         user.delete()
@@ -49,6 +51,7 @@ def super_delete_user(uid):
 @api.route('', methods=['GET'])
 @auth.login_required
 def get_user():
+    # url = http://localhost:5000/v1/user
     uid = g.user.uid
     user = User.query.filter_by(id=uid).first_or_404()
     return jsonify(user)
@@ -57,6 +60,7 @@ def get_user():
 @api.route('', methods=['DELETE'])
 @auth.login_required
 def delete_user():
+    # url = http://localhost:5000/v1/user
     uid = g.user.uid
     with db.auto_commit():
         user = User.query.filter_by(id=uid).first_or_404()
