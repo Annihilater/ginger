@@ -15,6 +15,6 @@
 | 校验 Token 信息    | POST   | /secret                   |
 | 超级管理员查询用户 | GET    | /user/<int:uid>           |
 | 超级管理员删除用户 | DELETE | /user/<int:uid>           |
-| 普通用户查询自己   | GET    | /user                     |
-| 普通用户删除自己   | DELETE | /user                     |
+| 登录用户自我查询   | GET    | /user                     |
+| 登录用户自我删除   | DELETE | /user                     |
 
