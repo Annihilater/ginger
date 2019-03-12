@@ -12,7 +12,7 @@ from app.libs.token_auth import auth
 from app.models.base import db
 from app.models.user import User
 
-api = RedPrint('user')
+api = RedPrint("user")
 
 
 # class QiYue:
@@ -30,7 +30,7 @@ api = RedPrint('user')
 #         return getattr(self, item)
 
 
-@api.route('/<int:uid>', methods=['GET'])
+@api.route("/<int:uid>", methods=["GET"])
 @auth.login_required
 def super_get_user(uid):
     # url = http://localhost:5000/v1/user/<int:uid>
@@ -38,7 +38,7 @@ def super_get_user(uid):
     return jsonify(user)
 
 
-@api.route('/<int:uid>', methods=['DELETE'])
+@api.route("/<int:uid>", methods=["DELETE"])
 @auth.login_required
 def super_delete_user(uid):
     # url = http://localhost:5000/v1/user/<int:uid>
@@ -48,7 +48,7 @@ def super_delete_user(uid):
     return DeleteSuccess()
 
 
-@api.route('', methods=['GET'])
+@api.route("", methods=["GET"])
 @auth.login_required
 def get_user():
     # url = http://localhost:5000/v1/user
@@ -57,7 +57,7 @@ def get_user():
     return jsonify(user)
 
 
-@api.route('', methods=['DELETE'])
+@api.route("", methods=["DELETE"])
 @auth.login_required
 def delete_user():
     # url = http://localhost:5000/v1/user

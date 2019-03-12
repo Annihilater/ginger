@@ -23,11 +23,11 @@ def framework_error(e):
         error_code = 1007
         return APIException(msg, code, error_code)
     else:
-        if app.config['DEBUG']:
+        if app.config["DEBUG"]:
             raise e
         else:
             return ServerError()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)

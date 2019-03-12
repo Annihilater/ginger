@@ -21,12 +21,12 @@ class JSONEncoder(_JSONEncoder):
         :param o: 不能序列化的对象
         :return: 可序列化的对象 or ServerError
         """
-        if hasattr(o, 'keys') and hasattr(o, '__getitem__'):
+        if hasattr(o, "keys") and hasattr(o, "__getitem__"):
             return dict(o)
         if isinstance(o, date):
-            return o.strftime('%Y-%m-%d')
+            return o.strftime("%Y-%m-%d")
         if isinstance(o, datetime):
-            return o.strftime('%Y-%m-%d')
+            return o.strftime("%Y-%m-%d")
         raise ServerError()
 
 

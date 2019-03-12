@@ -22,8 +22,8 @@ class SQLAlchemy(_SQLAlchemy):
 
 class Query(BaseQuery):
     def filter_by(self, **kwargs):
-        if 'status' not in kwargs.keys():
-            kwargs['status'] = 1
+        if "status" not in kwargs.keys():
+            kwargs["status"] = 1
         return super(Query, self).filter_by(**kwargs)
 
     def get_or_404(self, k):
@@ -62,7 +62,7 @@ class Base(db.Model):
 
     def set_attrs(self, attrs_dict):
         for key, value in attrs_dict.items():
-            if hasattr(self, key) and key != 'id':
+            if hasattr(self, key) and key != "id":
                 setattr(self, key, value)
 
     def delete(self):

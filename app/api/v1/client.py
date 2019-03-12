@@ -10,10 +10,10 @@ from app.libs.red_print import RedPrint
 from app.models.user import User
 from app.validators.forms import ClientForm, UserEmailForm, UserMobileForm
 
-api = RedPrint('client')
+api = RedPrint("client")
 
 
-@api.route('/register', methods=['POST'])
+@api.route("/register", methods=["POST"])
 def create_client():
     # url = http://localhost:5000/v1/client/register
     form = ClientForm().validate_for_api()
@@ -29,18 +29,12 @@ def create_client():
 
 def __register_by_email():
     form = UserEmailForm().validate_for_api()
-    User.register_by_email(
-        form.nickname.data,
-        form.account.data,
-        form.secret.data)
+    User.register_by_email(form.nickname.data, form.account.data, form.secret.data)
 
 
 def __register_by_mobile():
     form = UserMobileForm().validate_for_api()
-    User.register_by_mobile(
-        form.nickname.data,
-        form.account.data,
-        form.secret.data)
+    User.register_by_mobile(form.nickname.data, form.account.data, form.secret.data)
 
 
 def __register_by_mina():

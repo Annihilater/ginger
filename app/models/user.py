@@ -16,10 +16,10 @@ class User(Base):
     email = Column(String(24), unique=True, nullable=False)
     nickname = Column(String(24), unique=True)
     auth = Column(SmallInteger, default=1)
-    _password = Column('password', String(128))
+    _password = Column("password", String(128))
 
     def keys(self):
-        return ['id', 'email', 'nickname', 'auth']
+        return ["id", "email", "nickname", "auth"]
 
     @property
     def password(self):
@@ -52,8 +52,8 @@ class User(Base):
         user = User.query.filter_by(email=email).first_or_404()
         if not user.check_password(password):
             raise AuthFailed()
-        scope = 'AdminScope' if user.auth == 2 else 'UserScope'
-        return {'uid': user.id, 'scope': scope}
+        scope = "AdminScope" if user.auth == 2 else "UserScope"
+        return {"uid": user.id, "scope": scope}
 
     def check_password(self, raw):
         if not self.password:

@@ -13,10 +13,10 @@ from app.models.base import db
 from app.models.book import Book
 from app.models.gift import Gift
 
-api = RedPrint('gift')
+api = RedPrint("gift")
 
 
-@api.route('/<int:isbn>', methods=['POST'])
+@api.route("/<int:isbn>", methods=["POST"])
 @auth.login_required
 def create(isbn):
     # url = http://localhost:5000/v1/gift/<int:isbn>

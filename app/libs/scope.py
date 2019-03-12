@@ -24,14 +24,14 @@ class Scope:
 
 
 class UserScope(Scope):
-    allow_api = ['v1.user+get_user', 'v1.user+delete_user']
+    allow_api = ["v1.user+get_user", "v1.user+delete_user"]
 
     def __init__(self):
         self + Scope()
 
 
 class AdminScope(Scope):
-    allow_module = ['v1.user']
+    allow_module = ["v1.user"]
 
     def __init__(self):
         self + UserScope()
@@ -46,7 +46,7 @@ class SuperScope(Scope):
 
 def is_in_scope(scope, endpoint):
     scope = globals()[scope]
-    red_name = endpoint.split('+')[0]
+    red_name = endpoint.split("+")[0]
 
     if endpoint in scope.forbidden_api:
         return False

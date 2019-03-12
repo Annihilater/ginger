@@ -13,10 +13,8 @@ from app.validators.base import BaseForm as Form
 
 class ClientForm(Form):
     account = StringField(
-        validators=[
-            DataRequired(
-                message='不允许为空'), length(
-                min=8, max=32)])
+        validators=[DataRequired(message="不允许为空"), length(min=8, max=32)]
+    )
     secret = StringField()
     type = IntegerField(validators=[DataRequired()])
 
@@ -28,6 +26,7 @@ class ClientForm(Form):
         :return: 如果在自定义的验证器内抛出异常则表示验证失败；不抛出异常，则表示验证成功(暂时是这么理解的)
         """
         from app.libs.enums import ClientTypeEnum
+
         try:
             client = ClientTypeEnum(value.data)
         except ValueError as e:
@@ -36,11 +35,10 @@ class ClientForm(Form):
 
 
 class UserEmailForm(ClientForm):
-    account = StringField(validators=[Email(message='invalidate email')])
+    account = StringField(validators=[Email(message="invalidate email")])
     secret = StringField(
-        validators=[
-            DataRequired(),
-            Regexp(r'^[A-Za-z0-9_*&$#@]{6,22}$')])
+        validators=[DataRequired(), Regexp(r"^[A-Za-z0-9_*&$#@]{6,22}$")]
+    )
     nickname = StringField(validators=[DataRequired(), length(min=2, max=22)])
 
     def validate_account(self, value):
@@ -50,14 +48,11 @@ class UserEmailForm(ClientForm):
 
 class UserMobileForm(ClientForm):
     account = IntegerField(
-        validators=[
-            DataRequired(
-                message='不允许为空'), length(
-                min=11, max=11)])
+        validators=[DataRequired(message="不允许为空"), length(min=11, max=11)]
+    )
     secret = StringField(
-        validators=[
-            DataRequired(),
-            Regexp(r'^[A-Za-z0-9_*&$#@]{6,22}$')])
+        validators=[DataRequired(), Regexp(r"^[A-Za-z0-9_*&$#@]{6,22}$")]
+    )
     nickname = StringField(validators=[DataRequired(), length(min=2, max=22)])
 
     def validate_account(self, value):
