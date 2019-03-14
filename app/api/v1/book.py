@@ -31,13 +31,13 @@ def detail(isbn):
     return jsonify(book)
 
 
-@api.route("/", methods=["GET"])
+@api.route("", methods=["GET"])
 def get_book():
     # url = http://localhost:5000/v1/book/
     return "get book"
 
 
-@api.route("/", methods=["POST"])
+@api.route("", methods=["POST"])
 def create_book():
     # url = http://localhost:5000/v1/book/
     return "create book"
