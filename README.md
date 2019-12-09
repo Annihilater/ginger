@@ -23,10 +23,11 @@
 
 ## 效果展示
 
-- url：http://localhost:5000/v1/book/search?q=python
+- https://www.ginger.klause.cn/v1/book/search?q=python
 
-![image-20191209165319221](https://klause-blog-pictures.oss-cn-shanghai.aliyuncs.com/ipic/2019-12-09-085319.png)
+![image-20191209184221825](https://klause-blog-pictures.oss-cn-shanghai.aliyuncs.com/ipic/2019-12-09-104222.png)
 
-- url：http://localhost:5000/v1/book/9787115230270/detail
+- https://www.ginger.klause.cn/v1/book/9787115230270/detail
 
-![image-20191209165444471](https://klause-blog-pictures.oss-cn-shanghai.aliyuncs.com/ipic/2019-12-09-085444.png)
+![image-20191209184359039](https://klause-blog-pictures.oss-cn-shanghai.aliyuncs.com/ipic/2019-12-09-104359.png)
+
