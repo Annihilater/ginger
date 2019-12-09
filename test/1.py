@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date  : 2019/3/6 19:35
-# @Author: PythonVampire
-# @email : vampire@ivamp.cn
+# @Author: yanmiexingkong
+# @email : yanmiexingkong@gmail.com
 # @File  : 1.py
 # 本文件可以获取 sqlalchemy 模型对象的下的所有字段
 from sqlalchemy.inspection import inspect
