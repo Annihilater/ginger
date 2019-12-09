@@ -19,3 +19,14 @@
 | 登录用户自我删除   | POST   | /user                     | 需要 Token                                                   |
 | 测试               | GET    | /book/                    | 无需登录                                                     |
 
+
+
+## 效果展示
+
+- url：http://localhost:5000/v1/book/search?q=python
+
+![image-20191209165319221](https://klause-blog-pictures.oss-cn-shanghai.aliyuncs.com/ipic/2019-12-09-085319.png)
+
+- url：http://localhost:5000/v1/book/9787115230270/detail
+
+![image-20191209165444471](https://klause-blog-pictures.oss-cn-shanghai.aliyuncs.com/ipic/2019-12-09-085444.png)
